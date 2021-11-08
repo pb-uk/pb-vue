@@ -1,0 +1,31 @@
+<div id="app2">
+  <router-view></router-view>
+</div>
+
+<script>
+  const Foo = {
+    template: '<div>Foo {{ $route }}</div>',
+    setup() {
+    },
+  };
+
+  const Bar = {
+    template: '<div>Bar</div>',
+  };
+
+  var app = {
+    app: {
+      setup() {
+        const { useRouter } = window.PbVue.VueRouter;
+        const router = useRouter();
+        return {};
+      },
+    },
+    el: '#app2',
+    routes: [
+      { path: '/foo', component: Foo },
+      { path: '/bar', component: Bar },
+    ],
+  };
+</script>
+<script src="../dist/pb-vue.min.js"></script>
